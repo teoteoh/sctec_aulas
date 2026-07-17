@@ -1,32 +1,32 @@
-user_opcao = int(input("Conversor de medidas. Digite o número da opção desejada:\n1. Quilômetros e Milhas.\n2. Quilos e Libras\nOpção escolhida foi (número apenas): "))
+user_opcao = int(input("\nCONVERSOR DE MEDIDAS\n\nDigite o número da opção desejada:\n\n1. Quilômetros e Milhas.\n2. Quilos e Libras\n\nOpção escolhida foi (número apenas): "))
 
 # Caso usuário escolha conversão entre km/milhas
 
 if user_opcao == 1:
 
-    km = float(input("Número de quilômetros: "))
-    milhas = float(input("Número de milhas: "))
-    km_milhas = int(input("Qual opção desejada?\n1. Quilômetros para milhas.\n2. Milhas para quilômetros.\nOpção desejada (número apenas): "))
+    km = float(input("\nNúmero de quilômetros: "))
+    milhas = float(input("\nNúmero de milhas: "))
+    km_milhas = int(input("\n\nQual opção desejada?\n\n1. Quilômetros para milhas.\n2. Milhas para quilômetros.\n\nOpção desejada (número apenas): "))
 
     if km_milhas == 1:
-        print(km, "quilômetro(s) convertido(s) para milhas é/são", km * 0.6213712,"milha(s).")
+        print(f"\n{km:.2f} quilômetro(s) convertido(s) para milhas são {km * 0.6213712:.2f} milha(s).\n")
 
     elif km_milhas == 2:
-        print(km, "milha(s) convertida(s) para quilômetro(s) é/são", milhas / 0.6213712,"quilômetro(s).")
+        print(f"\n{milhas:.2f} milha(s) convertida(s) para quilômetro(s) são {milhas / 0.6213712:.2f} quilômetro(s).\n")
 
 # Caso usuário escolha conversão entre quilos/libras
 
 elif user_opcao == 2:
 
-    kg = float(input("Número de quilos: "))
-    lbs = float(input("Número de libras: "))
-    kg_libras = int(input("Qual opção desejada?\n1. Quilos para Libras.\n2. Libras para quilos.\nOpção desejada (número apenas): "))
+    kg = float(input("\nNúmero de quilos: "))
+    lbs = float(input("\nNúmero de libras: "))
+    kg_libras = int(input("\n\nQual opção desejada?\n\n1. Quilos para Libras.\n2. Libras para quilos.\n\nOpção desejada (número apenas): "))
 
     if kg_libras == 1:
-        print(kg, "Quilo(s) convertido(s) para libras é/são", kg * 2.20462262,"libra(s).")
+        print(f"\n{kg:.2f} Quilo(s) convertido(s) para libras é/são {kg * 2.20462262:.2f} libra(s).\n")
 
     elif kg_libras == 2:
-        print(lbs, "libra(s) convertida(s) para quilo(s) é/são", lbs / 2.20462262,"quilo(s).")
+        print(f"\n{lbs:.2f} libra(s) convertida(s) para quilo(s) é/são {lbs / 2.20462262:.2f} quilo(s).\n")
 
 else:
-    print("Favor entrar um número válido.")
+    print("Favor entrar um número válido.\n")
