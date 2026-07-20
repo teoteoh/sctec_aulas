@@ -29,4 +29,4 @@ elif user_opcao == 2:
         print(f"\n{lbs:.2f} libra(s) convertida(s) para quilo(s) é/são {lbs / 2.20462262:.2f} quilo(s).\n")
 
 else:
-    print("Favor entrar um número válido.\n")
+    print("Favor entrar um número válido.")
