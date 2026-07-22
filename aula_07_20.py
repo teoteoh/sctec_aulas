@@ -3,6 +3,14 @@
 # problema 3: só bate horário se horário anterior for batido.
 # problema 4: horário só pode ser batido em horários específicos.
 
+import csv
+
+dados_funcionarios = "dados_funcionarios.csv"
+
+with open(dados_funcionarios, "w", newline="", encoding="utf-8") as arquivo:
+    escritor = csv.writer(arquivo)
+    escritor.writerow(["Nome", "Matrícula", "Escola"])
+
 user = int(input("Usuário: "))
 senha = int(input("Senha: "))
 entrada = 0
@@ -10,6 +18,7 @@ almoco = 0
 almoco_volta = 0
 saida = 0
 ponto = 0
+
 
 if user == 123 and senha == 123:
     while ponto <= 5:
