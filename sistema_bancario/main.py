@@ -1,5 +1,6 @@
 import csv
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 saldo = 100
 extrato = []
@@ -16,7 +17,8 @@ def exibir_banco():
     print("2- Depositar Dinheiro")
     print("3- Sacar Dinheiro")
     print("4- Ver Extrato")
-    print("5- Sair")
+    print("5- Ver Movimentacao")
+    print("6- Sair")
 
 def consultar_saldo():
     print(f"\nSeu saldo atual é: R$ {saldo}")
@@ -57,9 +59,16 @@ def ver_extrato():
     pass
 
 def movimentacao():
-    #codigo
-    #codigo
-    #codigo
+    x = [1, 2, 3, 4, 5]
+    y = [2, 4, 6, 8, 10]
+
+    plt.plot(x, y, color="blue", linestyle="--", marker="o")
+
+    plt.title("Sample Line Chart")
+    plt.xlabel("X Axis Label")
+    plt.ylabel("Y Axis Label")
+
+    plt.show()
     pass
 
 def main():
@@ -76,7 +85,7 @@ def main():
             ver_extrato()
         elif opcao == "5":
             movimentacao()
-        elif opcao == "5":
+        elif opcao == "6":
             print("\nSaindo do sistema. Obrigado por utilizar o Caixa Eletrônico.")
             break
         else:
