@@ -59,8 +59,8 @@ def ver_extrato():
     pass
 
 def movimentacao():
-    x = [1, 2, 3, 4, 5]
-    y = [2, 4, 6, 8, 10]
+    x = extrato
+    y = [0, 500, 1000, 1500, 2000, 2500]
 
     plt.plot(x, y, color="blue", linestyle="--", marker="o")
 
