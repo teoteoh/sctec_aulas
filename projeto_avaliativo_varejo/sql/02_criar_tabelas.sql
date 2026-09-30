@@ -1,25 +1,3 @@
-\connect supermarket_db
-
-CREATE TABLE IF NOT EXISTS raw (
-    invoice_id,
-    branch,
-    city,
-    customer_type,
-    gender,
-    product_line,
-    unit_price,
-    quantity,
-    tax_5,
-    sales,
-    sale_date,
-    sale_time,
-    payment,
-    cogs,
-    gross_margin_percentage,
-    gross_income,
-    rating
-);
-
 CREATE TABLE IF NOT EXISTS processed (
     id_venda VARCHAR(50) NOT NULL,
     filial VARCHAR(10) NOT NULL,
