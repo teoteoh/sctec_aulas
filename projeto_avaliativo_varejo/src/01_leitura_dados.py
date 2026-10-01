@@ -7,30 +7,19 @@ caminho_csv = "data/raw/SuperMarket Analysis.csv"
 url_supermarket_db = dotenv_values().get("SUPERMARKET_DB_URL")
 
 df_raw = pd.read_csv(
-    caminho_csv,
+    "../data/raw/SuperMarket Analysis.csv",
     sep=",",
     encoding="utf-8-sig"
 )
 
-df_raw = df_raw.rename(columns={
-    "Invoice ID": "invoice_id",
-    "Branch": "branch",
-    "City": "city",
-    "Customer type": "customer_type",
-    "Gender": "gender",
-    "Product line": "product_line",
-    "Unit price": "unit_price",
-    "Quantity": "quantity",
-    "Tax 5%": "tax_5",
-    "Sales": "sales",
-    "Date": "sale_date",
-    "Time": "sale_time",
-    "Payment": "payment",
-    "cogs": "cogs",
-    "gross margin percentage": "gross_margin_percentage",
-    "gross income": "gross_income",
-    "Rating": "rating"
-})
+print("Dimensões:", df_raw.shape)
+print(df_raw.head())
+df_raw.info()
+print("Valores ausentes por coluna:")
+print(df_raw.isna().sum())
+print("Linhas duplicadas:", df_raw.duplicated().sum())
+
+
 
 engine = create_engine(url_supermarket_db)
 
