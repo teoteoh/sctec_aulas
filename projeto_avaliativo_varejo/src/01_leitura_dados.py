@@ -7,7 +7,7 @@ caminho_csv = "data/raw/SuperMarket Analysis.csv"
 url_supermarket_db = dotenv_values().get("SUPERMARKET_DB_URL")
 
 df_raw = pd.read_csv(
-    "../data/raw/SuperMarket Analysis.csv",
+    caminho_csv,
     sep=",",
     encoding="utf-8-sig"
 )

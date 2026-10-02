@@ -1,4 +1,6 @@
 import pandas as pd
+from dotenv import dotenv_values
+from sqlalchemy import create_engine
 
 df_raw = pd.read_csv(
     "data/raw/SuperMarket Analysis.csv",
@@ -76,3 +78,20 @@ df_processed.to_csv(
 )
 
 print("Arquivo CSV tratado salvo em data/processed/SuperMarket_processed.csv")
+
+url_supermarket_db = dotenv_values().get("SUPERMARKET_DB_URL")
+if not url_supermarket_db:
+    raise ValueError("Defina SUPERMARKET_DB_URL no arquivo .env.")
+
+engine = create_engine(url_supermarket_db)
+
+df_processed.to_sql(
+    "processed",
+    con=engine,
+    schema="public",
+    if_exists="replace",
+    index=False
+)
+engine.dispose()
+
+print("Dados carregados na tabela public.processed.")
