@@ -75,12 +75,18 @@ salvar_grafico(
 pagamentos = df.groupby("forma_pagamento")["id_venda"].nunique().sort_values(
 	ascending=False
 )
-salvar_grafico(
+plt.figure(figsize=(8, 8))
+plt.pie(
 	pagamentos,
-	"uso_por_forma_pagamento.png",
-	"Vendas por forma de pagamento",
-	formato="%.0f"
+	labels=[f"{forma} ({quantidade})" for forma, quantidade in pagamentos.items()],
+	autopct="%1.1f%%",
+	startangle=90
 )
+plt.title("Vendas por forma de pagamento")
+plt.axis("equal")
+plt.tight_layout()
+plt.savefig("resultados/uso_por_forma_pagamento.png", dpi=150)
+plt.close()
 
 media_mes = df.groupby(df["data_venda"].dt.to_period("M"))["valor_total"].mean()
 media_mes.index = media_mes.index.astype(str)
